@@ -16,6 +16,18 @@
             <a class="navbar-brand fw-bold fs-2" href="/">HEADLINES INDIA</a>
         </div>
     </nav>
+    <div class="parent">
+        <div class="list-group">
+            <% for (i of data.articles) { %>
+                <a href="#" class="list-group-item list-group-item-action text-truncate">
+                    <%= i.title %>
+                </a>
+                <% } %>
+
+        </div>
+        <div class="content-display"></div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 
