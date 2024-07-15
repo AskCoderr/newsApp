@@ -30,3 +30,27 @@ const contentDisplay = document.querySelector(".content-display");
 const listGroup = document.querySelector(".list-group");
 contentDisplay.style.height = `${listGroup.clientHeight}px`;
 contentDisplay.style.borderRadius = window.getComputedStyle(listGroup).getPropertyValue("border-radius");
+
+
+// adding functionalities to list group items
+let response = null;
+async function addFunctionality() {
+    response = await axios.get("/response");
+    const heading = document.querySelector(".header");
+    const body = document.querySelector(".body");
+    const footer = document.querySelector(".footer");
+    const dateTime = document.querySelector(".date-time");
+    const button = document.querySelector(".btn");
+    for (let i = 0; i < response.data.articles.length; i++) {
+        document.querySelector(`.b${i}`).addEventListener("click", () => {
+            footer.style.display = "flex";
+            const article = response.data.articles[i];
+            heading.textContent = article.title;
+            body.textContent = article.description;
+            dateTime.textContent = article.publishedAt.replace("T", " || ").replace("Z", "");
+            button.href = article.url;
+        })
+    }
+}
+addFunctionality();
+ 

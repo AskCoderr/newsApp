@@ -1,5 +1,6 @@
 body {
-background-color: #CCEEBC;
+    background-color: #CCEEBC;
+    font-family: "Share Tech Mono", monospace;
 }
 
 .navbar {
@@ -27,7 +28,34 @@ background-color: #CCEEBC;
     overflow: auto;
 }
 
-.list-group-item,
+.list-group-item {
+    background-color: #78C1F3;
+}
+
 .content-display {
     background-color: #78C1F3;
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr;
+    overflow: auto;
+}
+
+.trio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.header {
+    font-size: x-large;
+    border-bottom: 1px solid black;
+}
+
+.body {
+    font-size: large;
+    border-bottom: 1px solid black;
+}
+
+.footer {
+    display: none;
 }
